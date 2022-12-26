@@ -1,0 +1,49 @@
+<apex:page standardController="Account" extensions="AddAttendeesToCampaignController">
+    <script type="text/javascript">
+        function selectAllCheckboxes(obj,receivedInputID){
+            var inputCheckBox = document.getElementsByTagName("input");
+            for(var i=0; i<inputCheckBox.length; i++){
+                if(inputCheckBox[i].id.indexOf(receivedInputID)!=-1){
+                    inputCheckBox[i].checked = obj.checked;
+                }
+            }
+        }
+    </script>
+    <apex:form >
+    <apex:pageblock title="Select and Add Attendees">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}" />
+            <apex:commandButton value="Cancel" action="{!cancel}" immediate="true" />
+        </apex:pageBlockButtons>
+        <apex:repeat value="{!contactList}" var="rec">
+            <apex:pageBlockSection columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Account Name" styleClass="labelCol" style="font-size: 100%;" />
+                    <apex:outputText value="{!rec.Acc}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputText value="Campaign Name" styleClass="labelCol" style="font-size: 100%;" />
+                    <apex:outputText value="{!campaignName}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <apex:pageMessage rendered="{!rec.contacts.empty}" severity="info" strength="2" title="This Account does not have any Contacts that can be added at this time." />
+            <apex:PageBlockTable value="{!rec.contacts}" var="item" rendered="{!rec.contacts.size>0}">
+                <apex:column style="width: 25px;">
+                    <apex:facet name="header">
+                        <apex:inputCheckbox onclick="selectAllCheckboxes(this,'inputId')" />
+                    </apex:facet>
+                    <apex:inputCheckbox value="{!item.selected}" id="inputId" />
+                </apex:column>
+                <apex:column headerValue="Contact Name" value="{!item.con.Name}"/>
+                <apex:column value="{!item.con.Email}"/>
+                <apex:column value="{!item.con.Phone}"/>
+                <apex:column headerValue="Campaign Member Status">
+                    <apex:selectList size="1" multiselect="false" required="true" value="{!item.cmStatus}">
+                        <apex:selectOptions value="{!cmStatusOpts}" />
+                    </apex:selectList>
+                </apex:column>
+            </apex:PageBlockTable>
+        </apex:repeat>
+    </apex:pageblock> 
+    </apex:form>
+</apex:page>

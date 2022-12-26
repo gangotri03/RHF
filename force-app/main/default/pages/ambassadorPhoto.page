@@ -1,0 +1,27 @@
+<apex:page standardController="Contact" extensions="AmbassadorPhotoExtension"> 
+
+    
+<apex:form >
+    <apex:pageBlock title="Edit Contact Photo" rendered="{!imageUrl!=''}">
+        <div id="InnternalDiv" style="height:300px;">
+        <apex:pageBlockSection columns="1" rendered="{!showImage!=''}" >
+		    <img src="{!imageUrl}" width="150" height="150" />
+        </apex:pageBlockSection>        
+        <apex:pageBlockSection columns="1">
+            Choose an image file and save to change Contact Photo. images are max 300px x 300px
+        </apex:pageBlockSection> 
+        <apex:pageBlockSection columns="1">
+		    <apex:inputFile value="{!picture}" accept="image/*" />
+        </apex:pageBlockSection>
+        <apex:pageBlockSection columns="1">
+            {!errorMessage}
+        </apex:pageBlockSection>            
+        <apex:pageBlockButtons >
+            <apex:commandButton action="{!save}" value="Save"/>
+        </apex:pageBlockButtons>
+
+            </div>
+    </apex:pageBlock>
+    
+</apex:form>
+</apex:page>

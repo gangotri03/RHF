@@ -1,0 +1,37 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <ltng:require styles="{!join(',',$Resource.Cutom_style)}"/>
+    <ltng:require 
+                  styles="{!join(',',
+							$Resource.FS_SiteResources + '/css/bootstrap.min.css',
+                          	$Resource.FS_SiteResources + '/css/fontawesome.css')}"
+                  scripts="{!join(',',
+                           $Resource.FS_SiteResources + '/js/jquery-3.4.1.min.js',
+                           $Resource.FS_SiteResources + '/js/bootstrap.min.js',
+                           $Resource.FS_SiteResources + '/js/fontawesome-all.js')}"
+                  afterScriptsLoaded="{!c.scriptsLoaded}" />
+    
+    <div class="pfm-navbar forceCommunityGlobalNavigation LTENavbar" id="navbar" data-aura-rendered-by="86:2;a" data-aura-class="LTENavbar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark container">
+            <div class="container">
+                <div class="row">
+                    <div class="pfm-img_container slds-p-horizontal_large"> <img src="{!$Resource.FS_SiteResources + '/images/RHFAC_Hor_Rev_EN.png'}" /> </div>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active"> <a class="nav-link" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/homepage">Home</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/searchdirectory?id=a3V2I0000019QDC">Job Board</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/events#/events/tiles">Events</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/group/CollaborationGroup/00BF0000007BIn6MAG">Forum</a> </li>
+                            <li class="nav-item"> <a class="nav-link" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/store">Resources</a> </li>
+                            <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fa fa-user" aria-hidden="true"></i> </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/#/profile">Profile</a> <a class="dropdown-item" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/login/ForgotPassword">Change Password</a> <a class="dropdown-item" href="https://rhf.force.com/AccessibilityProfessionalNetwork/secur/logout.jsp">Logout</a> </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    <div class="banner d-md-none d-lg-none d-xl-none"><img src="{!$Resource.FS_SiteResources + '/images/mobile-banner.jpg'}" /></div>
+    </div>
+
+ </aura:component>

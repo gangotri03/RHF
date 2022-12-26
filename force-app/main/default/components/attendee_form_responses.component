@@ -1,0 +1,30 @@
+<apex:component controller="EventRegistrationControllerUnmanaged" access="global">
+ 
+<apex:attribute name="attendeeId" type="Id" description="Id of the attendee" assignTo="{!attr_attendeeId}"/>
+
+    <apex:outputPanel rendered="{!responses.size>0}">
+        <table  class="event-table" width="100%" cellpadding="0" cellspacing="0" bgcolor="#F7F6F5" border="0" style="padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;padding:20px;background-color:#F7F6F5;border:1px solid #D7D2CC;font-size:14px;">
+            <thead>
+            <tr>
+                <th style="text-align: left;">
+                    <h2 style="margin-top:0;color:#00205c;font-family:Arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.3em;">Question</h2>
+                </th>
+                <th style="text-align: left;">
+                    <h2 style="margin-top:0;color:#00205c;font-family:Arial,sans-serif;font-weight:bold;font-size:18px;line-height:1.3em;">Answer</h2>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <apex:repeat value="{!responses}" var="s">
+                <apex:repeat value="{!s.PagesApi__Field_Responses__r}" var="r">
+                    <tr>
+                        <td> <apex:outputField value="{!r.PagesApi__Field_Label__c}"/> </td>
+                        <td> <apex:outputField value="{!r.PagesApi__Response__c}"/> </td>
+                    </tr>
+                </apex:repeat>
+            </apex:repeat>
+            </tbody>
+        </table>
+    </apex:outputPanel>
+ 
+</apex:component>

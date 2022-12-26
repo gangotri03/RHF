@@ -1,0 +1,82 @@
+<aura:component controller="FS_SiteContentLntgCtrl" implements="forceCommunity:availableForAllPageTypes" access="global" >
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+    <aura:attribute name="contactInfo" type="Contact" default="{}"/>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="pfm-tabs_sidebar slds-col pfm-side_nav ">
+                    <div class="control-box sidebar"> <a href="" class="profile-img"> <img src="https://s3.us-east-1.amazonaws.com/fonteva-customer-media/00DF00000007SQtMAM/LwixnQAz_ACP_933_04_APN_Web_Badge_Member_Staff_jpg" /> </a>
+                        <h2>Welcome,<br/>{!v.contactInfo.Name} </h2>
+                        <p>View and edit your professional profile for the member directory, or make updates to your subscription and payment information</p>
+                        <a class="btn btn-primary" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s#/profile/my_info" role="button">My Profile</a> </div>
+                    <div class="control-box sidebar"> <a href="" class="profile-img"> <img src="https://s3.us-east-1.amazonaws.com/fonteva-customer-media/00DF00000007SQtMAM/wHgUlgYP_ACP_933_04_APN_Web_MembershipRenewal_png"/> </a>
+                        <h2>Renew the Membership</h2>
+                        <p>Don’t lose access to the Accessibility Professional Network! Renew your subscription to continue to receive webinars, resources and more.</p>
+                        <a class="btn btn-primary" href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/#/profile/subscriptions" role="button">Renew Now</a> </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="banner d-sm-block"><img src="{!$Resource.FS_SiteResources + '/images/banner.jpg'}" /></div>
+                <div class="content-area">
+                    <div class="content-area-inner">
+                        <h2>Building an Accessible Future</h2>
+                        <p>Welcome to the Accessibility Professional Network. Stay up-to-date on the latest in accessibility and connect with accessibility professionals across Canada. Here you will discover resources, webinars, events and job opportunities to help you stay up-to-date and continue to expand your knowledge in the field of accessibility.</p>
+                    </div>      
+                    <div class="boxes-wrap">
+                        <div class="row">
+                            <div class="boxes col-lg-4 col-md-6">
+                                <h2>Job Board</h2><br/>
+                                <div class="box-img"><img src="{!$Resource.FS_SiteResources + '/images/ACP-933.04-APN-Web_JobBoard.jpg'}" /></div>
+                                <div class="box-txt">
+                                    <p>Explore opportunities for accessibility professionals, listed exclusively for APN Members.</p>
+                                </div>
+                                <a href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/searchdirectory?id=a3V2I0000019QDC" class="btn btn-primary">Browse Jobs</a> 
+                            </div>
+                            <div class="boxes col-lg-4 col-md-6">
+                                <h2>Webinars and Events</h2>
+                                <div class="box-img"><img src="{!$Resource.FS_SiteResources + '/images/ACP-933.04-APN-Web_WebinarandEvents.jpg'}" /></div>
+                                <div class="box-txt">
+                                    <p>Browse upcoming webinars and events for accessibility professionals.</p>
+                                </div>
+                                <a href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/events#/events/tiles" class="btn btn-primary">Event Listings</a> 
+                            </div>
+                            <div class="boxes col-lg-4 col-md-6">
+                                <h2>Member Forum</h2><br/>
+                                <div class="box-img"><img src="{!$Resource.FS_SiteResources + '/images/ACP-933.04-APN-Web_MemberForum.jpg'}" /></div>
+                                <div class="box-txt">
+                                    <p>Collaborate with your peers and ask questions of experts in the APN member forum.</p>
+                                </div>
+                                <a href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/group/CollaborationGroup/00BF0000007BIn6MAG" class="btn btn-primary">Forum</a> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxes-wrap">
+                        <div class="row">
+                            <div class="boxes col-lg-4 col-md-6">
+                                <h2>Resource Library</h2>
+                                <div class="box-img"><img src="{!$Resource.FS_SiteResources + '/images/ACP-933.04-APN-Web_ResourceLibrary.jpg'}" /></div>
+                                <div class="box-txt">
+                                    <p>Expert guides, webinars and videos to support your expertise and growth.</p>
+                                </div>
+                                <a href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/store" class="btn btn-primary">Resources</a> </div>
+                            <div class="boxes col-lg-4 col-md-6">
+                                <h2>Badges</h2>
+                                <div class="box-img"><img src="{!$Resource.FS_SiteResources + '/images/ACP-933.04-APN-Web_Badges.jpg'}" /></div>
+                                <div class="box-txt">
+                                    <p>Earn badges which recognize your contributions and the continuing education units you have earned.</p>
+                                </div>
+                                <a href="https://rhf.force.com/AccessibilityProfessionalNetwork/s/#/profile/badges" class="btn btn-primary">My Badges</a> </div>
+                            <div class="boxes col-lg-4 col-md-6">
+                                <h2>Network News</h2>
+                                <div class="box-img"><img src="{!$Resource.FS_SiteResources + '/images/ACP-933.04-APN-Web_NetworkNews.jpg'}" /></div>
+                                <div class="box-txt">
+                                    <p>Read the latest monthly newsletter to discover updates on the Network and accessibility in Canada.</p>
+                                </div>
+                                <a href="https://pardot.rickhansen.com/webmail/808133/5138752/fa229fa1d1fd00a018cd1cbf62385f39d2b0718b834d97608504ee5f515141c0" target="_blank" class="btn btn-primary">Read Newsletter</a> </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>
